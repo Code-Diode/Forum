@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { getUserStatus, sign_out } from "../features/user/userSlice";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import Button from "react-bootstrap/Button";
 import NavDropdown from "react-bootstrap/NavDropdown";
 function NavBar() {
   const dispatch = useDispatch();
@@ -17,9 +16,11 @@ function NavBar() {
   };
 
   return (
-    <Navbar className="d-flex nav__bar" fixed="top" bg="light" expand="md">
+    <Navbar className="d-flex nav__bar" fixed="top" expand="md">
       <Navbar.Brand className="nav__brand mr-auto">
-        <NavLink className='nav__link' to='/' >Food Forum</NavLink>
+        <NavLink className="nav__link" to="/">
+          Food Forum
+        </NavLink>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbar-nav" />
       <Navbar.Collapse id="navbar-nav">
@@ -30,19 +31,27 @@ function NavBar() {
           <NavLink to="/nutrition-facts" className="nav__link">
             Nutrition facts
           </NavLink>
-          <NavDropdown  className="drop__down nav__link" title="Profile" id="basic-nav-dropdown">
-            {!isLoggedIn && (
-              <NavDropdown.Item>
-                <NavLink className='drop__down__link' to="/login">
-                  Login
-                </NavLink>
-              </NavDropdown.Item>
-            )}
-
-            {isLoggedIn && <NavDropdown.Item
-            className='drop__down__link'  
-            onClick={handleClick}>Logout</NavDropdown.Item>}
-          </NavDropdown>
+          {!isLoggedIn && (
+            <NavLink className="nav__link" to="/login">
+              Login
+            </NavLink>
+          )}
+          {isLoggedIn && (
+            <NavDropdown
+              className="drop__down nav__link"
+              title="Profile"
+              id="basic-nav-dropdown"
+            >
+              {isLoggedIn && (
+                <NavDropdown.Item
+                  className="drop__down__link"
+                  onClick={handleClick}
+                >
+                  Logout
+                </NavDropdown.Item>
+              )}
+            </NavDropdown>
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

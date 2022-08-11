@@ -92,7 +92,7 @@ function AddFoodForm() {
           onChange={handleChange}
         ></Form.Control>
    
-        <Button type='submit' className="mt-3">Add to table</Button>
+        <Button type='submit' className="mt-3 submit__btn">Add to table</Button>
 </Form.Group>
     </form>
   );

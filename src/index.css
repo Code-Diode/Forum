@@ -1,27 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap');
+
 /* global styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  background: rgb(255, 255, 255);
-  color: black;
-}
-
-body {
-  min-height: 100vh;
-  font-size: 1.5rem;
-  padding: 5%;
+  font-family: Josefin Sans ;
 }
 
 /* colors */
+:root {
+  --light-beige: #F7ECDE;
+  --beige: #E9DAC1;
+  --light-blue: #9ED2C6;
+  --blue:#54BAB9;
 
+}
 /* headings and p*/
 h1 {
   font-size: 3.5rem;
+}
+
+h2{
+  color: var(--blue);
 }
 
 p {
@@ -29,6 +30,19 @@ p {
   line-height: 1.4;
   font-size: 1rem;
   margin: 0.5em 0;
+}
+
+/* buttons */
+
+.submit__btn{
+  background-color: var(--blue) !important;
+  color: var(--light-beige) !important;
+}
+
+.submit__btn:hover{
+  background-color: var(--beige) !important;
+  color: var(--blue) !important;
+  border-color: transparent !important;
 }
 
 /* outlet and containers*/
@@ -66,46 +80,37 @@ article,
 }
 
 /* nav bar  */
-
+.nav__bar{
+  background-color: var(--blue);
+}
 .nav__link {
   text-decoration: none;
-  color: black;
+  color: var(--light-beige);
   display: block;
   padding: 10px;
   margin-top: 15px;
+  font-size: 1.1rem;
+}
+
+.nav__link:hover{
+  color:var(--beige);
 }
 
 .drop__down {
-  margin-top: 5px;
+  margin-top: 7px;
 }
 
 .drop__down__link {
   text-decoration: none;
   color: black;
-  margin: 5px;
-  padding: 5px;
+  width: fit-content;
 }
 
 .nav__brand > .nav__link {
   margin: 0 0 0 15px;
-  color: #04aa6d;
+  color: var(--beige);
+  font-size: 1.5rem;
 }
-
-/* posts list */
-
-.post__link {
-  text-decoration: none;
-}
-
-.reactionButton {
-  margin: 0 0.5em 0 0;
-  background: transparent;
-  border: none;
-  color: black;
-  font-size: 1rem;
-}
-
-
 
 /* login form */
 
@@ -124,13 +129,44 @@ form {
   padding: 50px;
 }
 
+/* posts list */
+
+.post__link {
+  text-decoration: none;
+  color: var(--blue);
+}
+
+.reactionButton {
+  margin: 0 0.5em 0 0;
+  background: transparent;
+  border: none;
+  color: var(--blue);
+  font-size: 1rem;
+}
+
+/* post details */
+.post__details{
+display: block;
+}
+
+.post__section {
+  text-align: justify;
+  margin: 100px 0;
+}
+
+
+
 /* nutrition table  */
 
 thead {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
-  background-color: #04aa6d;
+  text-align: center;
+  background-color: var(--blue);
   color: white;
+}
+
+td{
+  text-align: center;
 }
 

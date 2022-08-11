@@ -61,7 +61,7 @@ function AddPostForm() {
         ></Form.Control>
     </Form.Group>
        
-        <Button className="mt-3" type="submit">Submit Post</Button>
+        <Button className="mt-3 submit__btn" type="submit">Submit Post</Button>
       </Form>
     </div>
   );

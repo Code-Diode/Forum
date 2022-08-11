@@ -25,7 +25,7 @@ function PostsList() {
 
     return (
         <Row className='container'>
-            <Col className='add__item__form'>
+            <Col lg={4}  className='add__item__form'>
             <h2>Add Post: </h2>
             {isLoggedIn ?
             <AddPostForm /> :  <LoginAlert location={location}/>}

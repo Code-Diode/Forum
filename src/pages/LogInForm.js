@@ -77,7 +77,7 @@ function LogInForm() {
           />
         </Form.Group>
 
-        <Button type="submit" className="p-1 mt-4">
+        <Button type="submit" className="p-1 mt-4 submit__btn">
           Login
         </Button>
       </Form>
