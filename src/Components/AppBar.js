@@ -4,7 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { getUserStatus, sign_out } from "../features/user/userSlice";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-
+import Button from "react-bootstrap/Button";
+import NavDropdown from "react-bootstrap/NavDropdown";
 function NavBar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -16,25 +17,36 @@ function NavBar() {
   };
 
   return (
-    <Navbar fixed="top" bg="light" expand="lg">
-      
-        <Navbar.Brand href="/">Food Forum</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbar-nav" />
-        <Navbar.Collapse id="navbar-nav">
-          <Nav className="me-auto justify-content-end">
-            <NavLink to='/posts' className='nav__link'>posts</NavLink>
-            <NavLink  to="/nutrition-facts" className='nav__link'>Nutrition facts</NavLink>
-            {isLoggedIn && <button onClick={handleClick}>Logout</button>}
-            {!isLoggedIn && <NavLink to="/login" className='nav__link'>Login</NavLink>}
-          </Nav>
-        </Navbar.Collapse>
+    <Navbar className="d-flex nav__bar" fixed="top" bg="light" expand="md">
+      <Navbar.Brand className="nav__brand mr-auto">
+        <NavLink className='nav__link' to='/' >Food Forum</NavLink>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="navbar-nav" />
+      <Navbar.Collapse id="navbar-nav">
+        <Nav className="justify-content-end flex-grow-1 p-2">
+          <NavLink to="/posts" className="nav__link">
+            posts
+          </NavLink>
+          <NavLink to="/nutrition-facts" className="nav__link">
+            Nutrition facts
+          </NavLink>
+          <NavDropdown  className="drop__down nav__link" title="Profile" id="basic-nav-dropdown">
+            {!isLoggedIn && (
+              <NavDropdown.Item>
+                <NavLink className='drop__down__link' to="/login">
+                  Login
+                </NavLink>
+              </NavDropdown.Item>
+            )}
 
+            {isLoggedIn && <NavDropdown.Item
+            className='drop__down__link'  
+            onClick={handleClick}>Logout</NavDropdown.Item>}
+          </NavDropdown>
+        </Nav>
+      </Navbar.Collapse>
     </Navbar>
-  
-
   );
 }
-
- 
 
 export default NavBar;

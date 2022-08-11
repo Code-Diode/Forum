@@ -7,7 +7,7 @@ function PostDetails() {
   const { postId } = useParams();
   const post = useSelector((state) => getPostById(state, postId));
   return (
-    <article>
+    <article className="container">
       <h1>{post.title}</h1>
       <section>{post.content}</section>
       <section>

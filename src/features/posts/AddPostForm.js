@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { postAdded } from "../posts/postsSlice";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 function AddPostForm() {
   const dispatch = useDispatch();
@@ -34,26 +36,33 @@ function AddPostForm() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label>title</label>
-        <textarea
+      <Form onSubmit={handleSubmit}>
+      <Form.Group>
+      <Form.Label>title</Form.Label>
+        <Form.Control
           type="text"
           col="1"
           rows="1"
           name="title"
           value={item.title}
           onChange={handleChange}
-        ></textarea>
-        <label>content</label>
-        <textarea
+        ></Form.Control>
+      </Form.Group>
+    <Form.Group>
+      
+    <Form.Label>content</Form.Label>
+        <Form.Control
+        as='textarea'
           type="text"
           name="content"
           value={item.content}
           onChange={handleChange}
-        ></textarea>
+          rows={10}
+        ></Form.Control>
+    </Form.Group>
        
-        <button>Submit Post</button>
-      </form>
+        <Button className="mt-3" type="submit">Submit Post</Button>
+      </Form>
     </div>
   );
 }

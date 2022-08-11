@@ -6,7 +6,7 @@ import { Link, useLocation } from 'react-router-dom';
 import AddPostForm from './AddPostForm';
 import { getUserStatus } from '../user/userSlice';
 import { Col, Row } from 'react-bootstrap';
-
+import LoginAlert from '../../Components/LoginAlert';
 function PostsList() {
     const location = useLocation();
     const isLoggedIn = useSelector(getUserStatus);
@@ -26,8 +26,9 @@ function PostsList() {
     return (
         <Row className='container'>
             <Col className='add__item__form'>
+            <h2>Add Post: </h2>
             {isLoggedIn ?
-            <AddPostForm /> : <p>You have to <Link to='/login' state={{from: location}}>Login</Link> First</p>}
+            <AddPostForm /> :  <LoginAlert location={location}/>}
             </Col>
             <Col className='posts__list'>
             <h2>Posts</h2>

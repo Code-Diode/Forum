@@ -4,29 +4,25 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { getUserStatus } from "../user/userSlice";
 import { Link, useLocation } from "react-router-dom";
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import LoginAlert from "../../Components/LoginAlert";
 
 function NutritionFacts() {
   const isLoggedIn = useSelector(getUserStatus);
   const location = useLocation();
   return (
     <Row className="container">
-      <Col className="add__item__form">
-      <h2>Add an item: </h2>
-      {/* <AddFoodForm></AddFoodForm> */}
-      {isLoggedIn ? (
-        <AddFoodForm />
-      ) : (
-        <main>
-          <p>
-            You must <Link to="/login" state={{ from: location }}>Login</Link>first, do it
-          </p>
-        </main>
-      )}
+      <Col lg="auto" md="auto" sm={12} xs={12} className="add__item__form">
+        <h2>Add an item: </h2>
+        {isLoggedIn ? (
+          <AddFoodForm />
+        ) : (
+          <LoginAlert location={location}/>
+        )}
       </Col>
-      <Col lg={8} className="nutrition__table">
-      <NutritionFactsTable />
+      <Col className="nutrition__table">
+        <NutritionFactsTable />
       </Col>
     </Row>
   );

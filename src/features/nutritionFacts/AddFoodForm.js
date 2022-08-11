@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { factAdded } from "../nutritionFacts/nutritionSlice";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 function AddFoodForm() {
   const dispatch = useDispatch();
@@ -42,46 +44,57 @@ function AddFoodForm() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>name</label>
-        <input
-          type="text"
-          name="name"
-          value={item.name}
-          onChange={handleChange}
-        ></input>
-        <label>servingSize</label>
-        <input
-          type="text"
-          name="servingSize"
-          value={item.servingSize}
-          onChange={handleChange}
-        ></input>
-        <label>totalFat</label>
-        <input
+    <form onSubmit={handleSubmit}>
+    <Form.Group role="form">
+     
+          <Form.Label>name</Form.Label>
+          <Form.Control
+            type="text"
+            name="name"
+            value={item.name}
+            onChange={handleChange}
+          ></Form.Control>
+        
+          <Form.Label>servingSize</Form.Label>
+          <Form.Control
+            type="text"
+            name="servingSize"
+            value={item.servingSize}
+            onChange={handleChange}
+          ></Form.Control>
+     
+
+   
+      <Form.Label>totalFat</Form.Label>
+        <Form.Control
           type="number"
           name="totalFat"
           value={item.totalFat}
           onChange={handleChange}
-        ></input>
-        <label>protein</label>
-        <input
+        ></Form.Control>
+ 
+       
+       
+       <Form.Label>protein</Form.Label>
+        <Form.Control
           type="number"
           name="protein"
           value={item.protein}
           onChange={handleChange}
-        ></input>
-        <label>calories</label>
-        <input
+        ></Form.Control>
+       
+      
+      <Form.Label>calories</Form.Label>
+        <Form.Control
           type="number"
           name="calories"
           value={item.calories}
           onChange={handleChange}
-        ></input>
-        <button>Add to table</button>
-      </form>
-    </div>
+        ></Form.Control>
+   
+        <Button type='submit' className="mt-3">Add to table</Button>
+</Form.Group>
+    </form>
   );
 }
 
