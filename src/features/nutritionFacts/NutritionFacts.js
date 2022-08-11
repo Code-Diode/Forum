@@ -15,11 +15,7 @@ function NutritionFacts() {
     <Row className="container">
       <Col lg={3} md={5} sm={12} xs={12} className="add__item__form">
         <h2>Add an item: </h2>
-        {isLoggedIn ? (
-          <AddFoodForm />
-        ) : (
-          <LoginAlert location={location}/>
-        )}
+        {isLoggedIn ? <AddFoodForm /> : <LoginAlert location={location} />}
       </Col>
       <Col className="nutrition__table">
         <NutritionFactsTable />

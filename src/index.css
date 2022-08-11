@@ -1,27 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap");
 
 /* global styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Josefin Sans ;
+  font-family: Josefin Sans;
 }
 
 /* colors */
 :root {
-  --light-beige: #F7ECDE;
-  --beige: #E9DAC1;
-  --light-blue: #9ED2C6;
-  --blue:#54BAB9;
-
+  --light-beige: #f7ecde;
+  --beige: #e9dac1;
+  --light-blue: #9ed2c6;
+  --blue: #54bab9;
 }
 /* headings and p*/
 h1 {
   font-size: 3.5rem;
 }
 
-h2{
+h2 {
   color: var(--blue);
 }
 
@@ -34,12 +33,12 @@ p {
 
 /* buttons */
 
-.submit__btn{
+.submit__btn {
   background-color: var(--blue) !important;
   color: var(--light-beige) !important;
 }
 
-.submit__btn:hover{
+.submit__btn:hover {
   background-color: var(--beige) !important;
   color: var(--blue) !important;
   border-color: transparent !important;
@@ -80,7 +79,7 @@ article,
 }
 
 /* nav bar  */
-.nav__bar{
+.nav__bar {
   background-color: var(--blue);
 }
 .nav__link {
@@ -92,8 +91,8 @@ article,
   font-size: 1.1rem;
 }
 
-.nav__link:hover{
-  color:var(--beige);
+.nav__link:hover {
+  color: var(--beige);
 }
 
 .drop__down {
@@ -145,16 +144,14 @@ form {
 }
 
 /* post details */
-.post__details{
-display: block;
+.post__details {
+  display: block;
 }
 
 .post__section {
   text-align: justify;
   margin: 100px 0;
 }
-
-
 
 /* nutrition table  */
 
@@ -166,7 +163,6 @@ thead {
   color: white;
 }
 
-td{
+td {
   text-align: center;
 }
-

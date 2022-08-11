@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function MissingPage() {
-  return (
-    <div>Oops, there's no such page</div>
-  )
+  return <div>Oops, there's no such page</div>;
 }
 
-export default MissingPage
+export default MissingPage;

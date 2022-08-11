@@ -5,6 +5,7 @@ import { getUserStatus, sign_out } from "../features/user/userSlice";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
+
 function NavBar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ function NavBar() {
       <Navbar.Collapse id="navbar-nav">
         <Nav className="justify-content-end flex-grow-1 p-2">
           <NavLink to="/posts" className="nav__link">
-            posts
+            Posts
           </NavLink>
           <NavLink to="/nutrition-facts" className="nav__link">
             Nutrition facts

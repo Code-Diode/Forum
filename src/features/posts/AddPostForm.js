@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { postAdded } from "../posts/postsSlice";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 function AddPostForm() {
   const dispatch = useDispatch();
 
   const [item, setItem] = useState({
     title: "",
-    content: ""
+    content: "",
   });
 
   const handleChange = (e) => {
@@ -20,16 +20,11 @@ function AddPostForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (item) {
-      dispatch(
-        postAdded(
-          item.title,
-          item.content,
-        )
-      );
+      dispatch(postAdded(item.title, item.content));
 
       setItem({
         title: "",
-        content: ""
+        content: "",
       });
     }
   };
@@ -37,31 +32,32 @@ function AddPostForm() {
   return (
     <div>
       <Form onSubmit={handleSubmit}>
-      <Form.Group>
-      <Form.Label>title</Form.Label>
-        <Form.Control
-          type="text"
-          col="1"
-          rows="1"
-          name="title"
-          value={item.title}
-          onChange={handleChange}
-        ></Form.Control>
-      </Form.Group>
-    <Form.Group>
-      
-    <Form.Label>content</Form.Label>
-        <Form.Control
-        as='textarea'
-          type="text"
-          name="content"
-          value={item.content}
-          onChange={handleChange}
-          rows={10}
-        ></Form.Control>
-    </Form.Group>
-       
-        <Button className="mt-3 submit__btn" type="submit">Submit Post</Button>
+        <Form.Group>
+          <Form.Label>title</Form.Label>
+          <Form.Control
+            type="text"
+            col="1"
+            rows="1"
+            name="title"
+            value={item.title}
+            onChange={handleChange}
+          ></Form.Control>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>content</Form.Label>
+          <Form.Control
+            as="textarea"
+            type="text"
+            name="content"
+            value={item.content}
+            onChange={handleChange}
+            rows={10}
+          ></Form.Control>
+        </Form.Group>
+
+        <Button className="mt-3 submit__btn" type="submit">
+          Submit Post
+        </Button>
       </Form>
     </div>
   );

@@ -1,15 +1,16 @@
-import React from 'react'
-import AppBar from './AppBar';
-import { Outlet } from 'react-router-dom';
+import React from "react";
+import AppBar from "./AppBar";
+import { Outlet } from "react-router-dom";
+
 function Layout() {
   return (
     <div>
-        <AppBar/>
-        <div  className='outlet'>
+      <AppBar />
+      <div className="outlet">
         <Outlet />
-        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

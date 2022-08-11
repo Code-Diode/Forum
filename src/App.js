@@ -14,7 +14,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-
 function App() {
   const location = useLocation();
   return (
@@ -25,7 +24,6 @@ function App() {
             <Route index element={<LandingPage />} />
             <Route path="login" element={<LogInForm />} />
             <Route path="posts" element={<PostsList />}></Route>
-            <Route path="posts/:postId" element={<PostDetails />} />
             <Route
               path="posts/:postId"
               element={
